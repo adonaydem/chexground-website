@@ -1,4 +1,3 @@
-import { styled } from '@pigment-css/react';
 import { Mail, Activity ,Twitter, GitHub, Layers, Cpu, Coffee, Archive } from "react-feather";
 
 const icons = {
@@ -20,26 +19,17 @@ const Icon = ({ id, size, strokeWidth = 1, ...delegated }) => {
   }
 
   return (
-    <Wrapper
+    <span
+      className="icon-wrapper"
       style={{
         "--size": size + "px",
         "--stroke-width": strokeWidth + "px",
       }}
       {...delegated}
     >
-      <Component color="black" size={size} />
-    </Wrapper>
+      <Component aria-hidden="true" size={size} />
+    </span>
   );
 };
-
-const Wrapper = styled.div`
-  width: var(--size);
-  height: var(--size);
-
-  & > svg {
-    display: block;
-    stroke-width: var(--stroke-width);
-  }
-`;
 
 export default Icon;

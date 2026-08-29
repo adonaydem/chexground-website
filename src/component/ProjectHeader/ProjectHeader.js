@@ -1,56 +1,19 @@
 import React from "react";
-import { styled } from '@pigment-css/react';
 
-function ProjectHeader({ title, authors, institutions, publishedAt }) {
+function ProjectHeader({ title, authors, institutions, publishedAt, logoSrc }) {
   return (
-    <>
-      <NameHeader>
-	{title}
-      </NameHeader>
-      <Authors>
-	{ authors }
-      </Authors>
+    <header className="hero">
+      <h1 className="hero-title">
+        {logoSrc ? <img alt="" aria-hidden="true" className="hero-logo" src={logoSrc} /> : null}
+        {title}
+      </h1>
+      <div className="hero-authors">{authors}</div>
       {institutions ? (
-        <Institutions>
-	  { institutions }
-        </Institutions>
+        <div className="hero-institutions">{institutions}</div>
       ) : null}
-      <PublishedAt>
-	{ publishedAt }
-      </PublishedAt>
-      
-    </>
+      <div className="venue-badge">{publishedAt}</div>
+    </header>
   );
 }
-
-const NameHeader = styled.h1`
-  max-width: 800px;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1;
-  font-size: 4rem;
-`;
-
-const Authors = styled.p`
-  padding-top: 1rem;
-  font-weight: 300;
-  font-size: 1.rem;
-`;
-
-const Institutions = styled.p`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem 1rem;
-  padding-top: 0.5rem;
-  font-weight: 300;
-  font-size: 0.875rem;
-`;
-
-const PublishedAt = styled.p`
-  padding-bottom: 1rem;
-  font-weight: 100;
-  font-size: 1.25rem;
-`;
 
 export default ProjectHeader;
