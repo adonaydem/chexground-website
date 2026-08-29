@@ -14,30 +14,37 @@ const authors = [
   {
     name: "Adonay Demewez Gebremedhin",
     href: "https://github.com/adonaydem",
+    institutions: "1",
   },
   {
     name: "Wessam Shehieb",
     href: "mailto:w.shehieb@ajman.ac.ae",
+    institutions: "1",
   },
   {
     name: "Sara Alansari",
     href: "mailto:saraansari@live.com",
+    institutions: "2",
   },
   {
     name: "Mohamad Alansari",
     href: "mailto:100061914@ku.ac.ae",
+    institutions: "3",
   },
   {
     name: "Muzammal Naseer",
     href: "mailto:muhammadmuzammal.naseer@ku.ac.ae",
+    institutions: "3,4",
   },
   {
     name: "Sajid Javed",
     href: "mailto:sajid.javed@ku.ac.ae",
+    institutions: "3",
   },
   {
     name: "Naoufel Werghi",
     href: "mailto:Naoufel.Werghi@ku.ac.ae",
+    institutions: "3",
   },
 ];
 
@@ -137,15 +144,27 @@ export default function Home() {
           title="CheXGround: Anatomical Region Tokens for Grounded Longitudinal Chest X-ray Interpretation"
           authors={authors.map((author) => (
             <a href={author.href} key={author.name}>
-              {author.name}
+              {author.name}<sup>{author.institutions}</sup>
             </a>
           ))}
+          institutions={
+            <>
+              <span><sup>1</sup> Ajman University, UAE</span>
+              <span><sup>2</sup> University of Birmingham, UK</span>
+              <span><sup>3</sup> Khalifa University, UAE</span>
+              <span><sup>4</sup> University of Western Australia, Australia</span>
+            </>
+          }
           publishedAt="✨ BMVC 2026 ✨"
         />
         <ProjectLinks
           links={[
             { iconId: "archive", label: "Paper", href: PAPER_URL },
-            { iconId: "github", label: "Code (Coming Soon)" },
+            {
+              iconId: "github",
+              label: "Code (Coming Soon)",
+              href: "https://github.com/adonaydem/chexground",
+            },
           ]}
         />
         <TextBlock title="Abstract">

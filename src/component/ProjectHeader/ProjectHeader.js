@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from '@pigment-css/react';
 
-function ProjectHeader({ title, authors, publishedAt }) {
+function ProjectHeader({ title, authors, institutions, publishedAt }) {
   return (
     <>
       <NameHeader>
@@ -10,6 +10,11 @@ function ProjectHeader({ title, authors, publishedAt }) {
       <Authors>
 	{ authors }
       </Authors>
+      {institutions ? (
+        <Institutions>
+	  { institutions }
+        </Institutions>
+      ) : null}
       <PublishedAt>
 	{ publishedAt }
       </PublishedAt>
@@ -30,6 +35,16 @@ const Authors = styled.p`
   padding-top: 1rem;
   font-weight: 300;
   font-size: 1.rem;
+`;
+
+const Institutions = styled.p`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  padding-top: 0.5rem;
+  font-weight: 300;
+  font-size: 0.875rem;
 `;
 
 const PublishedAt = styled.p`
