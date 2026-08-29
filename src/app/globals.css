@@ -211,7 +211,7 @@ canvas {
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 0;
   background: #fff;
   box-shadow: 0 10px 32px rgba(20, 24, 31, 0.06);
 }
@@ -223,6 +223,11 @@ canvas {
 .paper-screenshot {
   width: 100%;
   height: auto;
+}
+
+.paper-figure--single {
+  width: calc(50% - 0.75rem);
+  justify-self: center;
 }
 
 .figure-pair {
@@ -316,6 +321,10 @@ button:focus-visible {
   .figure-pair {
     grid-template-columns: 1fr;
   }
+
+  .paper-figure--single {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -342,9 +351,6 @@ button:focus-visible {
     margin-top: 1.6rem;
   }
 
-  .paper-figure {
-    border-radius: 9px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

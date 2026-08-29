@@ -55,11 +55,11 @@ function paperAsset(path) {
   return `${basePath}/paper-assets/${path}`;
 }
 
-function PaperFigure({ src, alt }) {
+function PaperFigure({ src, alt, className = "" }) {
   const asset = paperAsset(src);
 
   return (
-    <figure className="paper-figure">
+    <figure className={`paper-figure ${className}`.trim()}>
       <a aria-label={`Open full-resolution ${alt}`} href={asset}>
         <img alt={alt} className="paper-screenshot" loading="lazy" src={asset} />
       </a>
@@ -125,6 +125,7 @@ export default function Home() {
         <section aria-label="Paper figures" className="figure-gallery">
           <PaperFigure
             alt="Overview of the grounded radiology tasks studied in this work"
+            className="paper-figure--single"
             src="task-overview.png"
           />
           <div className="figure-pair">
