@@ -16,7 +16,7 @@ const authors = [
   },
   {
     name: "Wessam Shehieb",
-    href: "mailto:w.shehieb@ajman.ac.ae",
+    href: "https://scholar.google.com/citations?user=5oaOk_YAAAAJ&hl=en",
     institutions: "1",
   },
   {
@@ -26,7 +26,7 @@ const authors = [
   },
   {
     name: "Mohamad Alansari",
-    href: "mailto:100061914@ku.ac.ae",
+    href: "https://github.com/HamadYA",
     institutions: "3",
   },
   {
