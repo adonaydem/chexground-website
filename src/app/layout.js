@@ -60,8 +60,8 @@ globalCss`
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Research Project Webpage Starter',
-  description: 'Generated your next research project webpage!',
+  title: 'CheXGround',
+  description: 'Anatomical Region Tokens for Grounded Longitudinal Chest X-ray Interpretation',
 };
 
 export default function RootLayout({ children }) {

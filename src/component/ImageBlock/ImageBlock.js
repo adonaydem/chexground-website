@@ -4,22 +4,24 @@ import { styled } from "@pigment-css/react";
 import { SIZES } from "../../util/const";
 
 
-function ImageBlock({ title, imageSrc, children }) {
+function ImageBlock({ title, imageSrc, media, children }) {
     const isProd = process.env.NODE_ENV === "production";
     const basePath = isProd ? process.env.NEXT_PUBLIC_BASE_PATH : "";
     return (
         <Layout>
             <Card>
-                <Header>{title}</Header>
+                {title ? <Header>{title}</Header> : null}
                 <ImageSpan>
-                    <Image
-                        priority
-                        src={basePath + imageSrc}
-                        alt="Method overview"
-                        layout="responsive"
-                        width={800}
-                        height={250}
-                    />
+                    {media || (
+                        <Image
+                            priority
+                            src={basePath + imageSrc}
+                            alt="Method overview"
+                            layout="responsive"
+                            width={800}
+                            height={250}
+                        />
+                    )}
                 </ImageSpan>
                 <Paragraph>
                     {children}
