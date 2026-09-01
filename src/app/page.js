@@ -5,13 +5,12 @@ import TextBlock from "../component/TextBlock";
 import ProjectLinks from "../component/ProjectLink";
 import CiteUs from "../component/Cite/Cite";
 
-const PAPER_URL =
-  "https://arxiv.org/search/?query=CheXGround%3A+Anatomical+Region+Tokens+for+Grounded+Longitudinal+Chest+X-ray+Interpretation&searchtype=title";
+const PAPER_URL = "https://arxiv.org/abs/2608.30758";
 
 const authors = [
   {
     name: "Adonay Demewez Gebremedhin",
-    href: "https://github.com/adonaydem",
+    href: "https://adonaydem.github.io/",
     institutions: "1",
   },
   {
@@ -150,12 +149,15 @@ export default function Home() {
           </div>
         </section>
         <CiteUs
-          entryType="inproceedings"
-          citationKey="gebremedhin2026chexground"
+          entryType="misc"
+          citationKey="gebremedhin2026chexgroundanatomicalregiontokens"
           title="CheXGround: Anatomical Region Tokens for Grounded Longitudinal Chest X-ray Interpretation"
           authors={authors.map((author) => author.name)}
-          booktitle="British Machine Vision Conference (BMVC)"
           year="2026"
+          eprint="2608.30758"
+          archivePrefix="arXiv"
+          primaryClass="cs.CV"
+          url="https://arxiv.org/abs/2608.30758"
         />
       </main>
       <Footer />
