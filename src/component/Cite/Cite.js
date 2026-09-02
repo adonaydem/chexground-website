@@ -48,7 +48,7 @@ const CiteUs = ({
   return (
     <section className="citation-section">
       <div className="citation-header">
-        <h2 className="citation-heading">Cite Us</h2>
+        <h2 className="citation-heading">Citation</h2>
         <button className="copy-button" onClick={handleCopy} type="button">
           {copied ? "Copied" : "Copy"}
         </button>
